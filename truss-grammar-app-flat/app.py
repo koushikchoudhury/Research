@@ -255,7 +255,8 @@ with tab_sol:
         ids = [n.id for n in cur.nodes if n.id != pin_id]
         a1, a2 = st.columns(2)
         load_node = a1.selectbox("Load on joint", ids, index=len(ids) - 1, key=f"ln{version}")
-        angle = a2.slider("Load direction (degrees, 270 = straight down)", 200, 340, 270, key=f"la{version}")
+        angle = a2.slider("Load direction (degrees: 0 = right, 90 = up, 180 = left, 270 = down)", 0, 360, 270,
+                          key=f"la{version}")
         loads = {load_node: (float(np.cos(np.radians(angle))), float(np.sin(np.radians(angle))))}
         try:
             res = ts.solve(cur, loads)
@@ -290,7 +291,10 @@ with tab_sol:
                        "within their limits. Displacements assume unit stiffness.")
             if pred is not None:
                 ok, escalate = si.decide(pred, rule)
-                if escalate:
+                if 0 < angle < 180:
+                    st.warning("This load has an upward component. The surrogate was trained only on downward loads "
+                               "(180 to 360 degrees), so do not trust it here; in a tiered check this goes to the solver.")
+                elif escalate:
                     st.warning("Routing: this design is close to a limit, or the networks disagree "
                                f"(spread {pred['spread_force']:.2f} / {pred['spread_disp']:.2f} in log10). "
                                "In a tiered check it would go to the solver.")
