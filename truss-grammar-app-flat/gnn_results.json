@@ -1,0 +1,73 @@
+{
+ "members": 3,
+ "limits": {
+  "F_LIM": 2.0,
+  "D_LIM": 5.0
+ },
+ "parts": {
+  "val": {
+   "max_force_R2_log": 0.6705037398869407,
+   "max_force_median_rel_err": 0.10507509917006658,
+   "max_disp_R2_log": 0.7491225901628741,
+   "max_disp_median_rel_err": 0.1593494804595455,
+   "feasible_accuracy": 0.9141630901287554,
+   "false_feasible_rate": 0.13069908814589665,
+   "false_reject_rate": 0.06135986733001658,
+   "share_feasible": 0.6469957081545065,
+   "member_force_error_vs_largest": 0.06847155094146729,
+   "n": 2796
+  },
+  "test": {
+   "max_force_R2_log": 0.6278316403629263,
+   "max_force_median_rel_err": 0.10331458787493528,
+   "max_disp_R2_log": 0.6541502672081267,
+   "max_disp_median_rel_err": 0.17133601005300805,
+   "feasible_accuracy": 0.9152360515021459,
+   "false_feasible_rate": 0.12974051896207583,
+   "false_reject_rate": 0.05964325529542921,
+   "share_feasible": 0.6416309012875536,
+   "member_force_error_vs_largest": 0.06945237517356873,
+   "n": 2796,
+   "spread_vs_error_corr": 0.35580998362472216
+  },
+  "big": {
+   "max_force_R2_log": 0.622418598253428,
+   "max_force_median_rel_err": 0.12438292715898412,
+   "max_disp_R2_log": 0.7038702989813048,
+   "max_disp_median_rel_err": 0.19660024460002673,
+   "feasible_accuracy": 0.9109485368314834,
+   "false_feasible_rate": 0.10079500283929585,
+   "false_reject_rate": 0.0796640944167045,
+   "share_feasible": 0.5557517658930373,
+   "member_force_error_vs_largest": 0.0846823900938034,
+   "n": 7928,
+   "spread_vs_error_corr": 0.39368663817421445
+  }
+ },
+ "routing": {
+  "rule": {
+   "margin_a": 0.15,
+   "margin_b": 4.0
+  },
+  "results": {
+   "val": {
+    "escalated_share": 0.6487839771101573,
+    "final_accuracy": 0.9964234620886981,
+    "false_feasible_rate": 0.00911854103343465,
+    "false_reject_rate": 0.000552791597567717
+   },
+   "test": {
+    "escalated_share": 0.657725321888412,
+    "final_accuracy": 0.9971387696709585,
+    "false_feasible_rate": 0.007984031936127744,
+    "false_reject_rate": 0.0
+   },
+   "big": {
+    "escalated_share": 0.6926084762865792,
+    "final_accuracy": 0.9986125126135217,
+    "false_feasible_rate": 0.0028392958546280523,
+    "false_reject_rate": 0.00022696323195642307
+   }
+  }
+ }
+}
